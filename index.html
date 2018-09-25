@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web layout</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+</head>
+<body>
+<header>
+    <div class="logo" alt="logo">
+        <img src="2.png">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">Contact</a></li>
+
+        </ul>
+    </nav>
+</header>
+<section>
+    <div class="bg">
+        <img src="Wallpaper-13.jpg" alt="wallpaper">
+        <div class="subscribe">
+            <h1>Welcome to our page!</h1>
+            <p>Feel free to subscribe</p>
+            <div class="mygtukas">
+                <input type="email" name="email" placeholder="Email...">
+                <button class="button"><i class="fas fa-paper-plane"></i> &nbsp; Button</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="content">
+    <div class="krepsinis">
+        <i class="fas fa-basketball-ball fa-3x kamuolys"></i>
+        <h2>Krepsinis jega</h2>
+        <p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and
+            demoralized by the charms of pleasure </p>
+        <button class="readmore">Read more &nbsp; <i class="fas fa-arrow-right"></i></button>
+    </div>
+
+    <div class="android">
+        <i class="fab fa-android fa-3x"></i>
+        <h2>Android</h2>
+        <p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and
+            demoralized by the charms of pleasure </p>
+        <button class="readmore">Read more &nbsp; <i class="fas fa-arrow-right"></i></button>
+    </div>
+
+    <div class="mario">
+        <i class="fas fa-gamepad fa-3x"></i>
+        <h2>Android</h2>
+        <p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and
+            demoralized by the charms of pleasure </p>
+        <button class="readmore">Read more &nbsp; <i class="fas fa-arrow-right"></i></button>
+    </div>
+</div>
+
+<div class="contact">
+    <div class="bg">
+        <img src="golden_flowers_pattern-wallpaper-1280x800.jpg" alt="pattern">
+        <div class="parasyk">
+            <p> Parasykite<br>mums laiskeli.</p>
+            <input type="text" placeholder="Jusu vardas..." name="vardas">
+            <input type="text" placeholder="Jusu pavarde..." name="pavarde">
+            <input type="text" placeholder="Jusu elpastas..." name="elpastas">
+            <input type="text" placeholder="Zinute" name="zinute">
+            <button><i class="fas fa-envelope"></i> &nbsp; Siusti</button>
+        </div>
+    </div>
+</div>
+
+<div class="googlemap">
+    <div id="map" style="width:100%;height:350px"></div>
+</div>
+
+<footer>
+    <ul>
+        <li><i class="fab fa-facebook fa-2x"></i></li>
+        <li><i class="fab fa-facebook fa-2x"></i></li>
+        <li><i class="fab fa-facebook fa-2x"></i></li>
+        <li><i class="fab fa-facebook fa-2x"></i></li>
+    </ul>
+    <p>© 2018 All Rights Reserved.</p>
+</footer>
+
+<script>
+    function myMap() {
+        var mapOptions = {
+            center: new google.maps.LatLng(51.5, -0.12),
+            zoom: 10,
+            mapTypeId: google.maps.MapTypeId.HYBRID
+        }
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
+
+</body>
+</html>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* HEADER START -------------- */
+    header {
+        grid-template-rows: 100px;
+        background-color: dimgrey;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+
+    }
+
+    header img {
+
+        padding: 10px;
+        width: 70px;
+
+    }
+
+    header .logo {
+        display: grid;
+        grid-column-start: 4;
+        align-items: center;
+    }
+
+    header nav {
+        grid-column: 7/12;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    header nav ul {
+        display: flex;
+        list-style-type: none;
+        grid-column-start: 7;
+    }
+
+    header nav ul li {
+        padding: 0 20px;
+    }
+
+    header nav ul li a {
+        text-decoration: none;
+        text-underline: none;
+        color: white;
+    }
+
+    /* ------------- HEADER END-----------*/
+
+    /* ---------------- BG START ----------------*/
+    .bg {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+
+    .bg img {
+        max-height: 400px;
+        width: 100%;
+        background-size: cover;
+    }
+
+    .bg .subscribe, .parasyk {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bg input[type=email] {
+        height: 25px;
+        border: 0;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .bg .subscribe .button {
+        background-color: limegreen;
+        height: 25px;
+        padding: 5px;
+        color: white;
+        border: none;
+    }
+    .mygtukas{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    /* --------------- BG END ----------- */
+
+    /* --------------- Content start ----------- */
+    .content {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto;
+        padding-bottom: 30px;
+    }
+
+    .content .krepsinis {
+        grid-column: 3/5;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .content i.fas, .content i.fab {
+        color: green;
+    }
+
+    .content .readmore {
+        margin-top: 15px;
+        border: 2px solid green;
+        padding: 5px;
+        color: green;
+        background-color: transparent;
+    }
+
+    .content .android {
+        grid-column: 6/8;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .content .mario {
+        grid-column: 9/11;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /* --------------- Content end ----------- */
+
+    /* ------------ CONTACT start ----------------*/
+
+    .contact .bg img {
+        max-height: 350px;
+    }
+
+    .contact .bg .parasyk p {
+        font-size: 25px;
+        color: white;
+    }
+
+    .contact .bg .parasyk input[type=text] {
+        height: 20px;
+        margin: 6px 0;
+        border-radius: 5px;
+        border: 0;
+    }
+
+    .contact .bg .parasyk button {
+        color: white;
+        background-color: limegreen;
+        border: 0;
+        height: 25px;
+        border-radius: 8px;
+        width: 100px;
+        margin: auto;
+    }
+
+    .contact .bg .parasyk button .fas {
+        color: white;
+    }
+
+    /* ------------ CONTACT end ----------------*/
+
+    /* ----- FOOTER ----*/
+    footer {
+        background-color: black;
+    }
+
+    footer ul {
+        list-style: none;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        padding: 40px 0 20px 0;
+    }
+
+    footer ul li {
+        color: white;
+        padding: 0 7px;
+    }
+
+    footer p {
+        text-align: center;
+        color: white;
+        padding: 0 0 40px 0;
+        font-size: 10px;
+    }
+
+</style>
